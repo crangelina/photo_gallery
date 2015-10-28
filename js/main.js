@@ -35,13 +35,19 @@ $(document).ready(function(){
 			$hexList.append($hexListItem);
 			$('.photos').append($hexList);
 
+			//hex click
+			$hex.on('click', function(){
+				$('#imagepreview').attr('src', photo.media.m);
+				$('.linkbtn').attr('href', photo.link);
+				$('#myModal').modal('show');
+			});
 			}); // end $.each loop
 		}; // end displayPhotos()
 		$.getJSON(flickerAPI, flickrOptions, displayPhotos);
 	}); // end button click
 }); // end on ready
 
-
+// data-toggle="modal" data-target="#myModal"
 
 //------------------------------------------------------------------------
 
@@ -73,6 +79,9 @@ $(document).ready(function(){
 			};
 
 			function displayPhotos1(data1) {
+
+			
+
 				var $hexList = $('<ul>');
 				$.each( data1.items, function (i, photo1) {
 					var $hexListItem = $('<li>');
@@ -99,6 +108,17 @@ $(document).ready(function(){
 			$.getJSON(flickerAPI1, flickrOptions1, displayPhotos1);
 		}); // end form submit
 }); // end ready
+
+
+
+	// var photosTemplate = $('#photosTemplate').html();
+	// 			var renderPhotos = _.template(photosTemplate);
+
+	// 			$.each(data.items, function(i, photo){
+	// 				var hex = renderPhotos({ poop : photo.media.m });
+	// 				$('.photos').append(hex);
+	// 			});
+
 
 
 
