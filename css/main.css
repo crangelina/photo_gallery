@@ -101,6 +101,7 @@ p {
 
 
 
+
 /* LIST */
 
 ul {
@@ -192,3 +193,20 @@ li:nth-child(19) {
   z-index: 2;
   background: inherit;
 }
+
+
+
+
+
+/* LIGHTBOX */
+
+.linkbtn {
+	text-shadow: none;
+}
+
+
+
+
+
+
+

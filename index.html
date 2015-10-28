@@ -27,7 +27,7 @@
 		  	<button type="button" class="greenButtonStyle breed btn">Boxer</button>
 		  	<button type="button" class="greenButtonStyle breed btn">Husky</button>
 		  	<button type="button" class="greenButtonStyle breed btn">Beagle</button>
-		  	<button type="button" class="greenButtonStyle breed btn">Mastiff</button>
+		  	<button type="button" class="greenButtonStyle breed btn">Italian Mastiff</button>
 		  	<button type="button" class="greenButtonStyle breed btn">German Shepherd</button>
 		  	<button type="button" class="greenButtonStyle breed btn">Chihuahua</button>
 		  	<button type="button" class="greenButtonStyle breed btn">Pitbull</button>
@@ -44,19 +44,39 @@
 
 		</div> <!--end .text-->
 	  
-
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="" id="imagepreview">
+        <hr>
+        <a href="" type="button" class="linkbtn btn btn-default" target="_blank">Link</a>
+      </div>
+    </div>
+  </div>
+</div>
 		<div class="photos">
 
-		 <!--  <div class="hexagon">
-	  		<div class="hexTop"></div>
-	  		<div class="hexBottom"></div>
-		  </div> -->
+			<script id="photosTemplate" type="text/templ">
+
+				<ul>
+					<li>
+				 		<div class="hexagon" style="background-image: url(<%= poop %>)"  >
+			  			<div class="hexTop"></div>
+			  			<div class="hexBottom"></div>
+				  	</div> 
+				  </li>
+				</ul>
+
+		  	</script>
 
 		</div> <!--end .photos-->
 
   	</div> <!--end container -->
 
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
     
   </body>
