@@ -16,6 +16,7 @@ $(document).ready(function(){
 		}; // end flickrOptions
 
 		function displayPhotos(data) {
+		
 			var $hexList = $('<ul>');
 			$.each( data.items, function (i, photo) {
 				var $hexListItem = $('<li>');
@@ -23,24 +24,23 @@ $(document).ready(function(){
 				$hex.addClass('hexagon');
 				$hex.css("background-image", "url(" + photo.media.m + ")");
 			
-			var $hexTop = $('<div>');
-			$hexTop.addClass('hexTop');
+				var $hexTop = $('<div>');
+				$hexTop.addClass('hexTop');
 
-			var $hexBottom = $('<div>');
-			$hexBottom.addClass('hexBottom');
+				var $hexBottom = $('<div>');
+				$hexBottom.addClass('hexBottom');
 
-			$hex.prepend($hexTop);
-			$hex.append($hexBottom);
-			$hexListItem.append($hex);
-			$hexList.append($hexListItem);
-			$('.photos').append($hexList);
+				$hex.prepend($hexTop);
+				$hex.append($hexBottom);
+				$hexListItem.append($hex);
+				$hexList.append($hexListItem);
+				$('.photos').append($hexList);
+			
 
-			//hex click
-			$hex.on('click', function(){
-				$('#imagepreview').attr('src', photo.media.m);
-				$('.linkbtn').attr('href', photo.link);
-				$('#myModal').modal('show');
-			});
+				//hex click
+					$hex.on('click', function(){
+						window.open(photo.link, '_blank');
+					});
 			}); // end $.each loop
 		}; // end displayPhotos()
 		$.getJSON(flickerAPI, flickrOptions, displayPhotos);
@@ -80,8 +80,6 @@ $(document).ready(function(){
 
 			function displayPhotos1(data1) {
 
-			
-
 				var $hexList = $('<ul>');
 				$.each( data1.items, function (i, photo1) {
 					var $hexListItem = $('<li>');
@@ -90,24 +88,32 @@ $(document).ready(function(){
 					$hex.css("background-image", "url(" + photo1.media.m + ")");
 				
 
-				var $hexTop = $('<div>');
-				$hexTop.addClass('hexTop');
+					var $hexTop = $('<div>');
+					$hexTop.addClass('hexTop');
 
-				var $hexBottom = $('<div>');
-				$hexBottom.addClass('hexBottom');
+					var $hexBottom = $('<div>');
+					$hexBottom.addClass('hexBottom');
 
-				$hex.prepend($hexTop);
-				$hex.append($hexBottom);
-				$hexListItem.append($hex);
-				$hexList.append($hexListItem);
-				$('.photos').append($hexList);
-				$('.pickBreedInput').val(null);
+
+					$hex.prepend($hexTop);
+					$hex.append($hexBottom);
+					$hexListItem.append($hex);
+					$hexList.append($hexListItem);
+					$('.photos').append($hexList);
+					$('.pickBreedInput').val(null);
+
+					//hex click
+					$hex.on('click', function(){
+						window.open(photo1.link, '_blank');
+					});
 
 				}); // end $.each loop
 			}; // end displayPhotos()
 			$.getJSON(flickerAPI1, flickrOptions1, displayPhotos1);
 		}); // end form submit
 }); // end ready
+
+
 
 
 
