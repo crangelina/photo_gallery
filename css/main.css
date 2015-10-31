@@ -76,9 +76,9 @@ p {
 	border-bottom: 2px solid #2ABC9C;
 }
 
-
-
-
+.moreButton {
+	margin: 0 auto;
+}
 
 /* INPUT */
 
@@ -96,8 +96,6 @@ p {
 	width: 240px;
 	display: inline-block;
 }
-
-
 
 
 
