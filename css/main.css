@@ -136,6 +136,10 @@ li:nth-child(19) {
   background-position: center;
 }
 
+.hexagon:hover {
+	opacity: .60;
+	cursor: pointer;
+}
 .hexTop,
 .hexBottom {
   position: absolute;
