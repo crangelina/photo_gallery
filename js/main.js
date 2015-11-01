@@ -35,12 +35,11 @@ $(document).ready(function(){
 				$hexListItem.append($hex);
 				$hexList.append($hexListItem);
 				$('.photos').append($hexList);
-			
 
 				//hex click
-					$hex.on('click', function(){
-						window.open(photo.link, '_blank');
-					});
+				$hex.on('click', function(){
+					window.open(photo.link, '_blank');
+				});
 			}); // end $.each loop
 		}; // end displayPhotos()
 		$.getJSON(flickerAPI, flickrOptions, displayPhotos);
